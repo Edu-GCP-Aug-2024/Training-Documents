@@ -738,4 +738,133 @@ Day 5 | 24th Aug. 2024
 				docker rmi 
 			
 		
-				
+    1  apt update -y
+    2  docker -version
+    3  clear
+    4  docker --version
+    5  docker version
+    6  docker images
+    7  docker ps
+    8  docker ps -a
+    9  docker rmi centos
+   10  celar
+   11  clear
+   12  docker images 
+   13  docker ps 
+   14  docker ps -a
+   15  docker pull centos
+   16  docker images 
+   17  clear
+   18  docker ps -a
+   19  docker ps
+   20  docker images 
+   21  docker run centos
+   22  docker ps
+   23  docker ps -a
+   24  docker run centos
+   25  docker ps -a
+   26  docker ps
+   27  docker run centos sleep 20 
+   28  docker ps
+   29  docker ps -a
+   30  clear
+   31  docker ps
+   32  docker ps
+   33  docker run centos sleep 30
+   34  docker ps
+   35  docker run -d centos sleep 30
+   36  docker ps
+   37  docker ps -a
+   38  docker run centos
+   39  docker ps -a
+   40  docker ps
+   41  clear
+   42  clear
+   43  docker ps
+   44  docker run -it centos bash
+   45  docker images
+   46  clear
+   47  docker images
+   48  docker run ubuntu
+   49  docker images
+   50  docker ps
+   51  docker ps -a
+   52  docker images
+   53  docker ps
+   54  docker ps 565fe4d29d16
+   55  docker stop 565fe4d29d16
+   56  docker run centos sleep 60
+   57  docker run -it ubuntu bash
+   58  docker ps
+   59  docker ps -a
+   60  docker start 25e9cdd128df
+   61  docker ps
+   62  docker ps
+   63  docker exec -it 25e9cd
+   64  docker exec -it 25e9cd bash
+   65  docker ps -a
+   66  docker ps
+   67  docker stop 25e9cdd128df
+   68  docker run -it tomcat:8.0 bash
+   69  docker ps
+   70  docker ps -a
+   71  docker run -it tomcat:8.0 bash
+   72  docker ps
+   73  docker ps
+   74  clear
+   75  docker ps
+   76  docker ps
+   77  docker stop 4e7d1d 7ffefff
+   78  docker ps
+   79  docker volume list
+   80  docker volume create edu-gcp-vol1
+   81  docker volume inspect edu-gcp-vol1 
+   82  cd /var/lib/docker/volumes
+   83  ls
+   84  cd edu-gcp-vol1/
+   85  ls
+   86  cd _data/
+   87  ls
+   88  pwd
+   89  ls
+   90  cat Containerdata.txt 
+   91  pwd
+   92  echo "rec1" >> infile1.txt
+   93  ls
+   94  echo "Rec" >> asdf.txt
+   95  ls
+   96  clear
+   97  docker ps
+   98  cd ~
+   99  mkdir docker-contents
+  100  cd docker-contents/
+  101  vi Dockerfile
+  102  ls
+  103  cat Dockerfile 
+  104  docker build -t loksaieta/gcp-test-img1 .
+  105  docker images
+  106  clera
+  107  clear
+  108  docker images
+  109  docker login -u loksaieta
+  110  docker push loksaieta/gcp-img1
+  111  docker push loksaieta/gcp-img1:v1.0
+  112  docker ps -a
+  113  docker images
+  114  docker rm 25e9cdd128df 565fe4d29d16 d4869b4af043
+  115  docker ps -a
+  116  clear
+  117  docker images
+  118  docker rmi loksaieta/gcp-test-img1
+  119  docker images
+  120  docker rmi loksaieta/gcp-img1:v1.0
+  121  docker ps -a
+  122  docker rmi ubuntu
+  123  docker rm 31abecf14052
+  124  docker stop 31abecf14052
+  125  docker rmi ubuntu
+  126  docker rmi -f loksaieta/gcp-img1:v1.0
+  127  docker ps -a
+  128  docker inspect df482da5201c
+  129  clear
+  130  history				
