@@ -387,4 +387,355 @@ Day 3 | 17th Aug. 2024
 			Gitlab-ci 			--> *.yaml
 			
 			
+							
+~~~~~~~~~~~~~~~~~~~~~~~
+Day 4 | 18th Aug. 2024
+~~~~~~~~~~~~~~~~~~~~~~~	
 		
+	Compute Service 
+	
+		- Create Virtual Machines!
+		
+		Console 
+		
+		Gcloud Shell
+		
+		gcloud sdk ==> to manage the gcloud resources 
+		
+		
+		https://cloud.google.com/sdk/docs/cheatsheet
+		
+		
+		gcloud sdk ==> to manage the gcloud resources 
+		
+		Working with GCloud sdk :::
+		
+			- Install gcloud sdk - in the local machine (Windows)
+			
+			
+		
+		gcloud compute instances list:
+		
+		
+		gcloud compute instances create sainstance91--zone asia-south2-a
+		
+		
+	VM - 
+	
+		Production Deployment :::
+		
+			Deploy the Application with ZERO Downtime ????
+			
+			
+	Virtual Machines :::
+	
+		- Virtual Machines are called as Hardware level virtualization.
+		- VMs are created using Hypervisor 
+		- VMs are used to run the Operating System
+		- On top of ths operating system, Applications can be up and running.
+		- Even if there is not Application, VM will still be running.
+	
+	
+	Containers ::::
+
+		- Containers are called as OS Level Virtualization.
+		- Containers are created using Container Engine 
+		- Containers are Not used to run the Operating System
+		- Conaintainer are used to run the task/applcation.
+		- If there is no task, Container will immediately goto exit state.
+		
+		
+	Containerization ::::
+		
+		- It is process of packaging the applications along with its dependencies
+		
+		
+	Monolith Application Architecture :::
+	
+		- Application is tightly coupled.
+		- It is not easy to split and deploy any function independently 
+		
+		- Only Continuous Delivery can be possible with the Monolith Application Architecture
+		
+	Micro-Service Based Application Architecture ::
+	
+		- Application is loosely coupled.
+		- The functions/Modules are called as microservice 
+		- Each Micro-Service can be independently created, test, and deployed to prod, without any manual intervension
+		
+		- Continuous Deployment can be possible with the Micro-Service Based Application Architecture
+.		
+		
+		
+	Containers can be used at two levels :
+	
+	Environments :
+	
+	Non-Prod 
+	
+		Dev Environment		- coding and development 
+		
+		Build Environment	- Compile the source code, create artifacts(Binaries - *.war/*.jar)
+							
+							Deploy the artifacts(myapp.war) from Build Environment to QA Environment
+							
+							Tools : jdk 11, tomcat server 8.5
+							
+								Create Container Package --> Is composed of (myapp.war / jedk 11, toncat server 9.5)
+														 --> Is Composed myapp-pkg1
+							
+								This Package myapp-pkg2
+								
+								
+		Test Environments 
+			QA 				--> myapp.war								myapp-pkg2:v1.0
+								Tools : jdk 11, tomcat server 8.5
+								Tools : jdk 8, tomcat server 10
+								
+			UAT 
+								Tools : jdk 11, tomcat server 8.5		myapp-pkg2
+								Tools : jdk 8, tomcat server 10
+	Prod 
+	
+		Prod Environments
+		
+		
+	Deployment Perspective :::
+	
+		Application Build :::
+		
+			
+			
+		Application Test :::
+		
+		
+		Application Release :::
+	
+	
+		Terminologies ::
+		
+			- Container Engine 
+			 
+			- Containerization of Application using Micro-Service Based Application Artifacts.
+			
+			- Container Images 
+					---> It is a static file, defines the various levels of Instructions to development the application
+						 This cannot be executed.
+						 
+						 
+					
+			- Container 	
+					---> 	Used to run the image 
+							Used to manage the application and tomcat severs in the above  example 
+			
+			- Container Registry 
+			
+					---> Used to store the container images 
+						 Dockerhub
+						 
+						 https://hub.docker.com/
+			
+			- Repository 
+			
+					---> Subset of Container Registry.
+					
+			- Trouble Shooting Issues :
+			
+			
+			- Kubernetes_Cluster 
+					- WorkerNode1
+					- WorkerNode1 -Install any applcation and run as pod 
+					
+					
+			- POD 
+				- Pods are somallast unit of task taht run on taret environment
+			
+		How to Create an Application :
+		
+			Micro-Service based applcation
+			
+			Create Application Build 
+			
+			Create Application Service Image 
+			
+			Deploy to Kubernetes - GKE 
+			
+			
+			
+			
+			Architecture of Kubernetes :::
+			
+			
+			Dockerhub :::
+			
+			
+
+~~~~~~~~~~~~~~~~~~~~~~~
+Day 5 | 24th Aug. 2024
+~~~~~~~~~~~~~~~~~~~~~~~			
+			
+		
+	Application Builds & Deployments :::
+	
+		Dev Envi 
+		
+		Build Environment 
+		
+		Test Environment
+		
+			QA 
+			
+			UAT 
+
+		Production Environment
+		
+		
+		Working with Container 
+		
+		Docker Container Engine :::
+		
+			- Docker Cli Command 
+			
+			
+		Install Docker :
+		
+			sudo apt install docker.io -y 		# 
+		
+		GCloud Shell ==> VMs
+		
+		Launch a VM ::
+		
+		Start-Up Task!
+		
+		
+		Docker CLI Commands :::
+		
+			docker images			# Used to get the list of Container Images 
+			
+			docker ps 				# used to get the list of running containers 
+			
+			docker ps -a			# Used to get the list of all containers 
+			
+			
+			docker pull <image_name # Download an image from container registry
+			
+			docker run <image_name>	# Used to create Container
+			
+			Modes of Execution :
+			
+				- Foreground/Attached Mode 						# Default 				
+					docker run centos sleep 20 
+				
+				- Background Mode 				
+					docker run -d sleep 20
+					
+				- Interactive Mode			
+					docker run -it centos bash 
+					
+			
+			Micro_Service : mywebapplogin_svc1:v1.0
+			
+				- 3 Tier Application
+				
+				Front-End Layer 
+				
+				Application Layer
+				
+				Back_End/Dbase 
+		
+		
+			docker stop <container_id>		# Stop the running container
+			
+			docker start <container_id>		# Start the existing container 			
+			
+			docker exec -it <container_id> bash					# Used to Login to Running Container 
+			
+			
+			Container Port Mapping :::
+			
+				docker run -it tomcat:8.0 bash 
+
+				docker run -it tomcat:8.0
+				
+				
+				docker run -it -p 8088:8080 tomcat:8.0 bash 
+				
+				-p <host_port>:<container_port>
+				
+				<external_ip_addrs>:8088 	==> to access the application 
+				
+				
+			Container Volumes :::
+			
+				Stateless Application :::
+				
+					
+				Stateful Application :::
+				
+				
+				Persistant Volume.
+				
+				
+				docker volume list 
+				docker volume create edu-gcp-vol1
+				docker volume inspect edu-gcp-vol1
+				
+			How to Create Container Images ::
+			
+				Docker Commit ::
+				
+					- It is used to create a container Image based on the existing container reference
+					
+					Syntax: 
+					
+					docker commit <container_id> <repository_name>/<New_Image_Name>:<tag>
+					
+					Eg.: 
+					
+					docker commit a2e7b4e44913 loksaieta/gcp-img1:v1.0
+				
+				
+				Docker Build ::
+				
+					It used to Create/Build a container image from the scratch using Dockerfile 
+					
+					vi Dockerfile 
+					
+					FROM ubuntu 
+					RUN apt update -y 
+					RUN apt install git -y 
+					RUN apt install maven -y 
+					
+					docker build -t loksaieta/gcp-test-img1 .			# the '.' at end, denotes te Dockerfile references
+				
+				
+			
+			Publish Docker Container Image to Container Registry ::
+			
+				- dockerhub
+				
+				- Login to DockerHub 
+					- Goto User Account Settings
+						- Choose Security tab
+							- Select Personal Access token
+								- Click on Generate New Token
+								
+								docker login -u loksasdasa
+								
+								d--tO8
+			
+								docker push <repository_name>/<New_Image_Name>:<tag>
+			Remove/Delete Container 
+			
+				docker rm <container_id> 
+				
+				docker rm 25e9cdd128df 565fe4d29d16 d4869b4af043
+				
+			Remove/Delete Container Iamge ::
+			
+				docker rmi <image_name>
+				
+				docker rmi 
+			
+		
+				
