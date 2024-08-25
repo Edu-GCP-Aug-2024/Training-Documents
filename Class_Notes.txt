@@ -868,3 +868,353 @@ Day 5 | 24th Aug. 2024
   128  docker inspect df482da5201c
   129  clear
   130  history				
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~
+Day 6 | 25th Aug. 2024
+~~~~~~~~~~~~~~~~~~~~~~~			
+	
+GKE ::::
+		
+	Deployments :::
+	
+	Micro-Service Based Applications 
+	
+	DevOps :::
+	
+	What is DevOps ????
+	
+	Jenkins
+	Github 
+	Jira
+	
+	Software Development Strategy :
+	
+	DevOps :::
+	
+	SDLC - Software Development Life Cycle ::::
+	
+	
+		- Desktop Applications
+		 
+		- Mobile Applications 
+		
+		- Web Applications 
+		
+		- Embedded Applications 
+		
+	DevOps ???
+	
+	Typical SDLC Process :::
+		
+		Requirement Analysis 
+		
+		Design/Document 
+		
+		Code/Development 
+		
+		Testing 
+		
+		Implementation 
+		
+		Maintain/Monitor 
+		
+	Waterfall Model to this process :
+		- Top-Down Approach
+		- Execution will be in Linear Fashion
+		
+		
+		Desktop Application --> 
+		
+				--> Super_Market Billing System 
+						Functions/Module 
+							- User Interface 
+							- Stock 
+							- Billing 
+							- Payment 
+								CASH Mode 
+								CARD Mode 		+ UPI Mode + Online Payment Mode 
+							- Generate Bills 
+							
+							
+				
+		Core Project :
+		
+			Requirement Analysis 		12 Months 		
+			Design/Document 		
+			Code/Development			7th Month 
+			Testing 		
+			Implementation 		
+			Maintain/Monitor 		
+			
+		Enhancement Project :
+		
+			Requirement Analysis 			+ UPI Mode + Online Payment Mode  6 -7 months
+			Design/Document 		
+			Code/Development			
+			Testing 		
+			Implementation 		
+			Maintain/Monitor 	
+
+	AGILE Methodologies :::
+	
+				--> Super_Market Billing System 
+						Functions/Module  			===> Iterations 
+							- User Interface 
+							- Stock 
+							- Billing 
+							- Payment 
+								CASH Mode 
+								CARD Mode 		+ UPI Mode + Online Payment Mode 
+							- Generate Bills 		
+	
+		Iteration 1 : User Interface 
+		
+			Requirement Analysis
+			Design/Document 	
+			Code/Development	
+			Testing 		
+			Implemented to prod with proper approval 	
+		
+		
+		Iteration 2 : Stock 
+		
+			Requirement Analysis
+			Design/Document 	
+			Code/Development	
+			Testing 		
+			Implemented to prod with proper approval 	
+		
+		Iteration 3 : Payment CASH Mode
+		
+			Requirement Analysis
+			Design/Document 	
+			Code/Development	
+			Testing 		
+			Implemented to prod with proper approval 	
+		
+		Iteration nth : Online Payment Mode 
+
+			Requirement Analysis
+			Design/Document 	
+			Code/Development	
+			Testing 		
+			Implemented to prod with proper approval 
+			
+		
+			Using AGILE Methodologies ;
+			
+			We can Achieve :
+			
+				- Continuous Development 
+				
+				- Continuous Integration 
+				
+				- Continuous Testing 
+				
+				- Continuous Delivery 
+					- It expects manual approvals for Production release 
+					- This might leads to down-time during Production release
+				
+				
+			We canno Achieve :
+			
+				- Continuous Deployment
+					- It never expect manual approvals for Production release 
+					- Production releases can be done automatically without any manual intevension
+					- This helps do Production releases without any downtime				
+
+				
+	DevOps :::
+	
+		DevOps is a Software Development Strategy which helps to promote the collaboration between the teams like Application Development Team  and Operations Team to achieve Continuous Development, Continuous Integration, Continuous Testing, Continuous Delivery, Continuous Deployment and Continuous Monitoring in  more automate fashion.
+		
+		
+	Implement DevOps :::
+	
+		DevOps Team: 
+			Infra-Structure Management Team
+			Application Development Team 
+			Testing Team 
+			Release Management Team 
+			Production Support Team
+			Production Monitoring Team 
+			IT Security Team 
+			
+			
+		How the Application is developed, Tested , Deployed ::::
+		
+		DevOps Stages ::
+		
+			Continuous Development :::
+			
+				- Improve Developers' productivity
+				
+				
+				Developer Role :
+				
+					Create Source Code :
+					
+					Save the Source Change to the Source Code Repository - github
+					
+				Using DevOps Strategy :
+				
+					Automate :
+					
+						Application Build 
+							- Compile the code, Create Artifacts(Binaries - *.war/*.jar)
+							- Unit Testing 
+							
+						Build Application Image using Docker 
+							- Create App_img:v1.0
+							- Publish App_img:v1.0 to Container Registry 
+							
+							
+							
+						Testing 
+							QA 	Deploy  App_img:v1.0 using Kubernetes
+							UAT Deploy  App_img:v1.0 using Kubernetes
+						
+						Prod Deploy  App_img:v1.0 using Kubernetes 
+						
+						Notifications 
+						
+						
+				CI/CD Pipeline :::
+				
+				
+		Jenkins :
+		
+			- Is a build orchestration tool 
+			- Automate Application Builds and Deployments 
+				
+			- Jenkins using Master - Slave Architecture
+			
+			Jenkins_Master Node ::	Create Jenkins CI/CD Pipeline Projects 
+			
+				Jenkins_Slave Node :: Perform the applcation builds 
+				
+				
+			Micro-Service Based Application Architecture ::
+				- Containerized Deployments using Kubernetes 
+			
+		Container Orchestration Tools :::
+		
+		  - It is used to orchestrate the containers 
+		  - It ensure high availability of containers
+		
+		
+		deploy a service :
+		
+			User_Login_Service 
+			
+				Front-End 		C1
+				
+				Application 	C2
+				
+				Back_End/Dbase  C3
+				
+			Docker Compose ::
+			
+				- Is used to Execute Multiple Containers  as a Service.
+				- Service Definition file - *.yaml 
+				
+			Docker Swarm ::
+
+				User_Login_Service 
+			
+					Front-End 		C1 => 3 instance of C1
+				
+					Application 	C2
+				
+					Back_End/Dbase  C3
+
+				
+				- It is used to create replicas of containers to ensure high availability 
+				- It can be used only for Docker Container
+				- Scale-up / scale-down 
+				- We cannot perform Auto-scaling / Load-Balancing
+				- Cannot perform self-healing 
+				
+				Web Application :
+				
+					5000 users can access simultaneously 	===> 10 Instance of Containers 
+					
+					
+			Kubernetes :::
+			
+				- Open-Source Kubernetes
+				- It is used to create replicas of containers to ensure high availability 
+				- It can be used only for any Container
+				- Scale-up / scale-down 
+				- Perform Deployments without any  downtime 
+				- We can perform Auto-scaling / Load-Balancing
+				- Can perform self-healing
+
+			Managed Services :::
+			
+				AWS 	-> ECS/ECR/EKS
+				Azure 	-> ACS/ACR,AKS
+				GCP 	-> GCE/GCR/GKE 
+			
+		
+		
+	Working with Kubernetes ::
+	
+		Kubernetes Architecture
+		
+			- API Servers
+			- ETCD 
+			- Scheduler
+			- Controller Manager 
+			
+			- Kubelet
+			- Kube-Proxy 
+			- CRI - COntainer Runtime Interface (Container-D)
+			
+			
+		Kubernetes Terminologies/Concepts 
+		
+			Kubernetes Master
+			
+			Kubernetes Cluster 	- Is a collection of workernodes
+			
+				Kubernetes WorkerNode1,2,3,4,5,6
+				
+			Kubectl		--> Command Line Utility used to interact with Kubernetes
+			
+			kubelet 	--> Is a Kubernetes Agent runs on all the node. Responsible for Pods Deployments 
+			
+			kubeadm 	--> Is a Command Line Utility used to install and manage the kubernetes cluster 
+			
+			Pods 		--> Atomic Unit of Scheduling
+			
+			Controller Objects
+			
+				- Replication Controller 
+				- Replicaset 
+				- Daemonset 
+				- Deployment Object 
+				
+			Services :
+				- NodePort Services 
+				- ClusterIP
+				- Load Balancer
+				
+				
+	Create Micro-Service Based Application :
+	
+	- Install Jenkins 
+	- Configure Jenkins 
+	- Setup build and deployments 
+	- Integrate Kubernetes Cluster to Jenkins
+	- Create end-to-end Deployment - CICD Pipeline 		
+	- GKE
+			
+			
+				
+		
+		
+		
+		
