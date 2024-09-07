@@ -1213,7 +1213,238 @@ GKE ::::
 	- GKE
 			
 			
+	
+		
+~~~~~~~~~~~~~~~~~~~~~~~
+Day 7 | 31st Aug. 2024
+~~~~~~~~~~~~~~~~~~~~~~~		
+
+	Working with Kubernetes :::
+	
+	GKE - Google Kubernetes Engine!
+	
+	Kubernetes Cluster and Deploy pods
+	It is used to create replicas of containers to ensure high availability 
+	
+	
+	
+	GKE :::
+	
+		Kubernetes can be installed and Configured by the User using standared approach
+		
+		in GKS : kubernetes cluster will be create 
+		
+			- Standard Approach
+			- AutoPilot
+			
+			
+	Kubectl :::
+	
+		It is a Command Line Utility Used to interact with Kubernetes control plane
+		
+		Perform Deployment :::
+		
+		
+		Manifest File --> 
+		
+			Kubectl :::
+			
+		kubectl get nodes
+		
+		kubectl get ns 
+		
+		kubectl get pods --all-namespaces 
+		
+		kubectl get svc 
+		
+		kubectl get pods -o wide
+		
+	Namespace :::
+			
+		- Is a Logical Partitioning of Kubernetes Cluster 	
+		
+		Default Namespace 
+		
+		Dev Team 	Environment 
+		
+		Testing Team 	Environments
+		
+		
+		c: folder1
+		
+			file1 --> 500KB
+			
+			
+	
+	It is used to create replicas of containers to ensure high availability 	
+	
+	
+		Kubernetes Controller Manager :
+		
+			Replication Control Ojbect 
+			ReplicaSet Object 
+			Daemonset 
+			Deployment 
+		
+		
+			Replication Control & ReplicaSet :::
+				Both are used to Create some replicas of Pods
 				
+				Replication_Controller --> Create replicas of pods and stored in the masternode config
+											It used the Equality based operator
+											It scale-up / scale-down
+											
+											envi = "dev"
+											
+											enii = "qa"
+											
+				Replicaset 				---> Used to create replicas of Pods		
+											It used the Set based operator
+											
+											
+											
+											
+				Daemonset 				---> Used to Deploy copy of pods in all the nodes / subset 
+				
+				
+				Deployment 				---> 
+											Is used to Deploy the containerised workloads in kubernetes
+											It can perform, New deployments,
+											Existing Application Upgrade / Downgrade 
+											Rollback 
+											Scale-up/Scale-down
+											
+											All these things can be achieved without any downtime. 
+											
+				
+					- Uses the RollingUpdate Deployment Strategy :
+					
+					
+					pod1 		-- v1.0				===> Upgrade to v2.0
+					pod2 		-- v1.0
+					pod3 		-- v1.0	- deleted once now instance is created 
+					
+					pod4		--> v2.0
+					
+					
+				Automation of CICD Pipeline :::
+				
+				
+~~~~~~~~~~~~~~~~~~~~~~~
+Day 8 | 31st Aug. 2024
+~~~~~~~~~~~~~~~~~~~~~~~	
+
+
+	kubectl exec ?
+	
+	Working with pods 
+	
+	
+	Create Pod 
+	
+	Login to Pod 
+	
+	Port Mapping --> 
+	
+	NodePort Service :::
+	
+	- NodePort Ranges between 30000 to 32767 
+		
+			Kubernetes_Master 
+				Kubernetes_Cluster 
+					Kubernetes WorkerNode1
+					Kubernetes WOrkerNode2
+					Kubernetes WorkerNode3
+					
+					
+	Pod Deployment ::::
+	
+		- Create pod 
+			1. Manifest file - nginx_pod.yaml
+
+			
+		- Login to the pod 
+			2. kubectl create -f nginx_pod.yaml
+			
+	
+	Replication_Controller ::
+	
+				Replication_Controller --> Create replicas of pods and stored in the masternode config
+									It used the Equality based operator
+									It scale-up / scale-down
+									
+				
+				Deployment 				---> 
+											Is used to Deploy the containerised workloads in kubernetes
+											It can perform, New deployments,
+											Existing Application Upgrade / Downgrade 
+											Rollback 
+											Scale-up/Scale-down
+											It will automatically creates the Replicaset 
+											
+											All these things can be achieved without any downtime. 
+											
+				
+					- Uses the RollingUpdate Deployment Strategy :											
+					
+		Daemonset 				
+				---> Used to Deploy a copy of pod in all the nodes / subset 
+				---> 
+				
+					KMaster
+						KNode1,2,3,4,5,6
+						
+						
+					- Monitor te node and app_confgig 
+					
+					- Logger Tool 
+					
+					
+					
+		Services ::::
+		
+			NodePort 
+			
+			ClusterIP
+			
+			Load Balancer
+			
+			
+			
+		Volumes ::::
+		
+		Containers --> Volumes
+
+			Persistant Volumes :::
+			
+			
+			Kubernetes Volumes :::
+				- Emptydir 			# Default volume 
+				- HostPath Volume	# No issues 
+				- Persistant Volume 
+				- Prsistable Volume Claim
+				
+				
+	Data Security :::
+	
+		Security Vaults ===? 
+		
+		Appln. 
+		Create query to database 
+		
+		
+		Create Pipeline Projects 
+				
+				
+				- ConfigMaps 
+					- Used to maintain no-sensitive data 
+				- Secrets
+					- Used to Maintainer the Sensitive Data 
+					- These data are accessible with in pods
+		
+		
+		
+					
 		
 		
 		
