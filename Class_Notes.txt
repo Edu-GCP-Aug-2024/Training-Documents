@@ -1331,7 +1331,7 @@ Day 7 | 31st Aug. 2024
 				
 				
 ~~~~~~~~~~~~~~~~~~~~~~~
-Day 8 | 31st Aug. 2024
+Day 8 | 1st Sep. 2024
 ~~~~~~~~~~~~~~~~~~~~~~~	
 
 
@@ -1445,7 +1445,189 @@ Day 8 | 31st Aug. 2024
 		
 		
 					
+			
+~~~~~~~~~~~~~~~~~~~~~~~
+Day 9 | 7th Sep. 2024
+~~~~~~~~~~~~~~~~~~~~~~~	
+
+
+
+		Services ::::
 		
+			NodePort 
+			
+			ClusterIP
+			
+			Load Balancer
+
+	NodePort Service :::
+	
+	- NodePort Ranges between 30000 to 32767 
+
+
+	Node Port Service - is for single service 
+	
+	Node Port 		==> Created at the Service Level.
+	
+	Load Balancer	==> Created at the applcation level.
+	
+	
+	Ingress Rules/Protocols :::
+	
+		- It is used to route the request to the corresponding Services.
+		
+		- Simple Route 
+				--> DNS Routing!
+		
+		- Host Based Routing 
+			
+		- Path Based Routing 
+	
+	
+	www.google.com 
+		- Maps 
+		- Drive 
+		- Translate 
+		- .......
+	
+
+	- Host Based Routing 
+	
+		www.google.com 
+	
+			www.drive.google.com 
+			www.translate.google.com 
+			www.mail.google.com 
+			www.maps.google.com 
+		
+
+	- Path Based Routing 
+		
+		www.gmail.com
+		
+			inbox 		===>	www.gmail.com/inbox 
+			sent 		===> 	www.gmail.com/sent 
+			trash 
+		
+		
+		
+	
+	
+	
+	www.gmail.com 
+	
+	
+	Security:::
+	
+		NameSpaces ::::
+		
+			- Is a logical partitioning of Kubernetes Cluster
+	
+	
+			kubectl create namespace <dev>
+			kubectl create namespace <qa>
+	
+# nginx-pod.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod
+  namespace: dev
+  labels:
+    app: nginx
+    tier: dev
+spec:
+  containers:
+  - name: nginx-container
+    image: nginx
+
+    ports:
+    - containerPort: 80	
+	
+	
+	Non-Prod Kube_Cluster ::
+
+			Kubernetes_Master
+				Kubernetes_WorkerNode1,2,3,4,5,6
+
+	
+		DEV_NameSpace 
+		QA_NameSpace 
+		App1_Dev_Namespace 
+		App1_QA_NameSpace 
+
+
+	Namespace are also used on Prod_ Kube_Cluster :::
+	
+
+		Kubernetes_Master
+			Kubernetes_WorkerNode1,2,3,4,5,6
+
+
+		Blue-Green Deployment :::
+
+
+			Production Environment :::
+																							
+				Production_Servers(Deployment_Group - 5 Server) LIVE Environment 	===> 	webapp_V1.0
+																							webapp_V1.1		# Minor Changes
+																							webapp_V1.2		# Minor Changes
+																							webapp_V1.3		# Minor Changes
+																							
+				Major Release :::
+				
+				webapp_V1.3			====> webapp_V2.0	
+				
+				
+				Create Replica of Production Environment :::
+
+				
+					Production_Servers(Deployment_Group - 5 Server) ACTIVE Environment		Blue / Green Deployment
+					
+						Copy/Replicate the Production_Servers
+						
+						
+							Production_Servers(Deployment_Group - 5 Server) 		# PASSIVE Environment
+				
+								Deploy the latest version *2.0 to this new Production_Servers
+								
+								
+								
+								
+				Using Kubernetes :::
+				
+					Kubernetes_Master
+						Kubernetes_WorkerNode1,2,3,4,5,6
+						
+					Create a Manifest file :::
+					
+						- To define the properties of Containers Deployments, Pods
+
+					Prod_Environment ::
+					
+					Kubernetes_Master
+						Kubernetes_WorkerNode1,2,3,4,5(Prod Servers)		
+						
+						
+						BLUE-GREEN Deployment :::		Approve to run multiple jobs
+						
+						
+							Current_Namespace ::
+							
+							NameSpace ::	LIVE-Prod Namespace 		myweb1(V1.0)		--> Active Server
+							
+							
+							
+								
+
+							Prod Related ::
+							
+							NameSpace ::	New-Gen_App_Namespace  		myweb1.war(V2.0)		--> Just a Passive Server 
+							ACTIVE 
+							
+							
+							
+			
 		
 		
 		
