@@ -1629,5 +1629,61 @@ spec:
 							
 			
 		
+~~~~~~~~~~~~~~~~~~~~~~~
+Day 10 | 8th Sep. 2024
+~~~~~~~~~~~~~~~~~~~~~~~								
+					
+	GKE - Kubernetes Security 
 		
+		Kubernetes uses RBAC ::
+
+			API Server 
+			
+			
+			User Authentication & Authorization 
+			
+			RBAC - Role based Access Control.
+			
+	GCloud Storage :
+
+			
+		RBAC - Role based Access Control.	
+		
+		
+	Kubernetes Developer 
+	
+	Kubernetes Admininstration 
+	
+	Kubernetes Security Administration
+		
+		
+	GCloud Storage :
+	
+		Storage Service
+
+		Create VM
+		And ceate sql db service
+		Attach SQL Databse(VM)
+		
+		
+					GCP Cloud Storage Bucket
+						- Create storge bucket using Console 
+						- uing  Script 
+
+		
+edu-gcp-bkt1
+
+
+	Storage :
+	
+		File System Storage 
+		
+		Database Storage 
+		
+			MySQL
+			
+			
+			SQL Services
+
+	
 		
