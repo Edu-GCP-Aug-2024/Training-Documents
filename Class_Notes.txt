@@ -2021,3 +2021,66 @@ resource "aws_instance" "instance9" {
     Name = "Dummy_Server0"
   }
 }
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~
+Day 12 | 15th Sep. 2024
+~~~~~~~~~~~~~~~~~~~~~~~	
+
+
+	UseCases - GCP AI & ML Services 
+	
+		GCP - AI & Machine Languages Service!
+		
+		
+		GCP :
+		
+			Gen App Builder
+	
+			Gen App Builder is a powerful tool that helps developers with no machine learning experience create enterprise grade generative AI apps. This tool offers a no code approach, enabling developers to build high quality experiences in minutes or hours.
+
+			Time Series Database - That maintains the metrics of Deployments and the servers 
+
+			GCP Vertex AI 
+			
+			Is a managed machine learning (ML) platform that lets developers, data scientists, and analysts build, train, and deploy machine learning models at scale. It's essentially the evolution and unification of various AI and ML products like AI Platform Training, AI
+			
+			
+			Big Query :: 
+			
+			Machine Learning!
+			
+			
+			AI vs Gen AI :::
+			
+			Data mining!
+			
+			Data Analysis!
+			
+
+			Data Analyst / Gen AI / ML 
+			
+			Speach Recognization 
+			
+
+			AI/ML Observability ::
+
+				Meant for complex and crucial system.
+					Infra-Structure
+					Application Health check
+					
+					
+			Infra-Structure Monitoring!		--> 1000s of Servers to be monitored!
+			
+				CPU / Memory Utilization 
+					- Threshold Limit 
+						80% -- Alert the Users 
+
+							
+				Process Automation Script!
+				
+					 python/ruby/
+				
+				
+				
